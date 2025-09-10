@@ -1,1 +1,17 @@
-
+<h2 tabindex="-1" class="heading-element" dir="auto">📚 Table of Contents</h2>
+<ul dir="auto">
+<li><a href="#business-task">Business Task</a></li>
+<li><a href="#question-and-solution">Question and Solution</a></li>
+</ul>
+<p dir="auto">Please note that all the information regarding the case study has been sourced from the following link: <a href="https://8weeksqlchallenge.com/case-study-1/" rel="nofollow">here</a>.</p>
+<h2 tabindex="-1" class="heading-element" dir="auto">Business Task</h2>
+<p dir="auto">Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favourite.</p>
+<h2 tabindex="-1" class="heading-element" dir="auto">Question and Solution</h2>
+<strong>1. What is the total amount each customer spent at the restaurant?</strong>
+SELECT s.customer_id,
+SUM(m.price) total_spending_per_customer
+FROM sales s
+JOIN menu m
+ON s.product_id=m.product_id
+GROUP BY s.customer_id
+ORDER BY s.customer_id;
